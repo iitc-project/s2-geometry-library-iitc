@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.7.0//EN"
+  "http://gwtproject.org/doctype/2.7.0/gwt-module.dtd">
+<module rename-to='main'>
+  <inherits name='com.google.gwt.user.User'/>
+
+  <entry-point class='com.google.common.geometry.Main'/>
+
+  <source path="geometry" />
+  <add-linker name="xsiframe"/>
+
+  <inherits name='com.google.common.annotations.Annotations'/>
+  <inherits name='com.google.common.base.Base'/>
+  <inherits name='com.google.common.collect.Collect'/>
+  <inherits name='org.timepedia.exporter.Exporter'/>
+  <set-property name="export" value="yes"/>
+</module>
