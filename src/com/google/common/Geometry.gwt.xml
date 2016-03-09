@@ -7,11 +7,12 @@
   <entry-point class='com.google.common.geometry.Main'/>
 
   <source path="geometry" />
-  <add-linker name="xsiframe"/>
 
   <inherits name='com.google.common.annotations.Annotations'/>
   <inherits name='com.google.common.base.Base'/>
   <inherits name='com.google.common.collect.Collect'/>
   <inherits name='org.timepedia.exporter.Exporter'/>
   <set-property name="export" value="yes"/>
+  <set-property name="user.agent" value="gecko1_8"/>
+  <add-linker name="sso"/>	
 </module>
