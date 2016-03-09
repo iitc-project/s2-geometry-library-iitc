@@ -37,6 +37,7 @@ public class Main implements EntryPoint {
 		GWT.create(S2Polyline.class);
 		GWT.create(S2Projections.class);
 		GWT.create(S2RegionCoverer.class);
+		GWT.create(CellName.class);
 		
 		//ExporterUtil.exportAll();
 		onLoad();
