@@ -578,6 +578,33 @@ import org.timepedia.exporter.client.NoExport;
       i.intValue() - size >= 0).parent(level);
   }
 
+  public S2CellId getEdgeNeighbor(int index) {
+
+    MutableInteger i = new MutableInteger(0);
+    MutableInteger j = new MutableInteger(0);
+
+    int level = this.level();
+    int size = 1 << (MAX_LEVEL - level);
+    int face = toFaceIJOrientation(i, j, null);
+
+    switch(index) {
+      // Edges 0, 1, 2, 3 are in the S, E, N, W directions.
+      case 0:
+        return fromFaceIJSame(face, i.intValue(), j.intValue() - size,
+          j.intValue() - size >= 0).parent(level);
+      case 1:
+        return fromFaceIJSame(face, i.intValue() + size, j.intValue(),
+          i.intValue() + size < MAX_SIZE).parent(level);
+      case 2:
+        return fromFaceIJSame(face, i.intValue(), j.intValue() + size,
+          j.intValue() + size < MAX_SIZE).parent(level);
+      case 3:
+        return fromFaceIJSame(face, i.intValue() - size, j.intValue(),
+          i.intValue() - size >= 0).parent(level);
+    }
+    return null;
+  }
+
   /**
    * Return the neighbors of closest vertex to this cell at the given level, by
    * appending them to "output". Normally there are four neighbors, but the
